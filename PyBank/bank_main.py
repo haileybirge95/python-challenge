@@ -2,8 +2,6 @@
 import os
 import csv
 
-budget_csv = os.path.join("budget_data.csv")
-
 # Initialize variables
 total_months = 0
 total_profit_losses = 0
@@ -13,7 +11,7 @@ greatest_decrease = ["", 99999999]
 previous_profit_loss = 0
 
 # Read the CSV file
-with open('budget_data.csv', 'r') as file:
+with open("Resources/budget_data.csv") as file:
     csvreader = csv.reader(file)
     header = next(csvreader)  # Skip the header row
     for row in csvreader:
@@ -48,5 +46,5 @@ Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})
 
 print(output)
 
-with open('analysis.txt', 'w') as file:
+with open('Analysis/analysis.txt', 'w') as file:
     file.write(output)

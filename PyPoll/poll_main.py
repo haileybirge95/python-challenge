@@ -2,15 +2,13 @@
 import os
 import csv
 
-election_csv = os.path.join("election_data.csv")
-
 # Initialize variables
 total_votes = 0
 candidate_votes = {}
 candidates = []
 
 # Read the CSV file
-with open('election_data.csv', 'r') as file:
+with open('Resources/election_data.csv') as file:
     csv_reader = csv.reader(file)
     next(csv_reader)  # Skip the header row
     for row in csv_reader:
@@ -35,7 +33,7 @@ print(f"Total Votes: {total_votes}")
 print(f"Winner: {winner}")
 
 # Export the results to a text file
-with open('election_results.txt', 'w') as output_file:
+with open('Analysis/analysis.txt', 'w') as output_file:
     output_file.write("Election Results\n")
     output_file.write("-------------------------\n")
     output_file.write(f"Total Votes: {total_votes}\n")
